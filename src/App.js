@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 // Context
@@ -20,7 +20,7 @@ import PaymentPage from "./components/PaymentPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import RefundPolicy from "./pages/RefundPolicy";
-import ContactPage from "./pages/Contact"; // renamed to avoid conflic
+import ContactPage from "./pages/Contact";
 import AboutCafe from "./pages/AboutCafe";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
@@ -28,47 +28,43 @@ import SignIn from "./pages/SignIn";
 function App() {
   return (
     <CartProvider>
-      <Router>
-        {/* Navbar displayed on all pages */}
-        <Navbar />
+      {/* Navbar always visible */}
+      <Navbar />
 
-        {/* Routes */}
-        <Routes>
-          {/* Home page with multiple sections */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <About />
-                <Menu />
-                <Contact />
-              </>
-            }
-          />
+      {/* Routes */}
+      <Routes>
+        {/* Home page sections */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <About />
+              <Menu />
+              <Contact />
+            </>
+          }
+        />
 
-          {/* Explore Menu page */}
-          <Route path="/explore-menu" element={<ExploreMenu />} />
+        {/* Pages */}
+        <Route path="/explore-menu" element={<ExploreMenu />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
 
-          {/* Shopping Cart */}
-          <Route path="/cart" element={<CartPage />} />
+        {/* Footer Quick Links */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/about-cafe" element={<AboutCafe />} />
 
-          {/* Payment Page */}
-          <Route path="/payment" element={<PaymentPage />} />
+        {/* Auth */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<SignIn />} />
+      </Routes>
 
-          {/* Footer Quick Links */}
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/refund-policy" element={<RefundPolicy />} />
-          <Route path="/contact" element={<ContactPage />} />
-           <Route path="/about-cafe" element={<AboutCafe />} />
-            <Route path="/login" element={<Login />} />
-          <Route path="/signin" element={<SignIn />} />
-        </Routes>
-
-        {/* Footer displayed on all pages */}
-        <Footer />
-      </Router>
+      {/* Footer always visible */}
+      <Footer />
     </CartProvider>
   );
 }
