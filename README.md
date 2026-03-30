@@ -6,7 +6,9 @@
 
 ## 🌟 Live Demo
 
-Check the live website here: [Coffee Cafe Live](https://moksha622.github.io/Coffee-Cafe/)
+Check the live website here: [Coffee Cafe Live](https://moksha622.github.io/Coffee-Sell/)
+
+
 
 ---
 
@@ -118,4 +120,5 @@ npm test
 Eject Project (Optional):
 
 npm run eject
+
 
