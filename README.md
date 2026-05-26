@@ -4,10 +4,10 @@
 
 ---
 
-## 🌟 Live Demo
+## 🚀 Live Demo
 
-Check the live website here: [Coffee Cafe Live](https://moksha622.github.io/Coffee-Sell/)
-
+🌐 **Live Coffee Cafe Website**  
+👉 [Click here to view live project](https://6a1529b2749b3f3341634a54--golden-bonbon-045464.netlify.app/)
 
 
 ---
